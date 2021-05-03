@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         splitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,11 +121,15 @@ public class MainActivity extends AppCompatActivity {
                     total = amtInputFloat;
                 }
 
-                String discountInputString = discountInput.getText().toString();
-                float discountInputFloat = Float.parseFloat(discountInputString);
+                if(TextUtils.isEmpty(discountInput.getText())){
+                }
+                else{
+                    String discountInputString = discountInput.getText().toString();
+                    float discountInputFloat = Float.parseFloat(discountInputString);
 
-                if(discountInputFloat > 0) {
-                    total *= (1 - discountInputFloat / 100);
+                    if(discountInputFloat > 0) {
+                        total *= (1 - discountInputFloat / 100);
+                    }
                 }
 
                 String splitamt;
